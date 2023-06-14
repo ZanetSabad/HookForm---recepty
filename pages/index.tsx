@@ -21,7 +21,6 @@ const ingredientsSchema: ObjectSchema<TIngredient> = object({
 const recipeSchema: ObjectSchema<TRecipe> = object({
 	recipeId: string().optional(),
 	titleRecipe: string().required('Musí být vyplněno'),
-	weight: string().required('Musíš vybrat jednu z možností'),
 	ingredient: array().of(ingredientsSchema).optional(),
 	instruction: string().optional(), 
 	comment: string().optional(),
@@ -38,7 +37,6 @@ const App: FC = () => {
 	}
 
 	console.log('titleRecipe: ', methods.watch('titleRecipe'))
-	console.log('weight: ', methods.watch('weight'))
 	console.log('instruction: ', methods.watch('instruction'))  
 	console.log('comment: ', methods.watch('comment'))
 	
